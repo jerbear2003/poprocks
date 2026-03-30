@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Fredoka+One&family=Righteous&family=Permanent+Marker&display=swap');
+
+/* ===== ROOT CUSTOM PROPERTIES ===== */
+:root {
+  /* Default theme - Warm Psychedelic */
+  --primary: #ff006e;
+  --secondary: #ffbe0b;
+  --accent: #8338ec;
+  --background: #fbf5e9;
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --neutral-light: #f0f0f0;
+  --neutral-dark: #333333;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Typography */
+  --font-display: 'Fredoka One', 'Righteous', sans-serif;
+  --font-accent: 'Caveat', cursive;
+  --font-mono: 'Permanent Marker', cursive;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-sm: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 4px 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 8px 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-grungy: 3px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== THEME VARIANTS ===== */
+/* Cool Neon */
+[data-theme="cool-neon"] {
+  --primary: #00d9ff;
+  --secondary: #ff006e;
+  --accent: #b537f2;
+  --background: #0a0a1a;
+  --text-dark: #00d9ff;
+  --text-light: #ffffff;
+}
+
+/* Earthy Grungy */
+[data-theme="earthy-grungy"] {
+  --primary: #8b4513;
+  --secondary: #d4a574;
+  --accent: #6b3410;
+  --background: #e8dcc8;
+  --text-dark: #3e2723;
+  --text-light: #ffffff;
+}
+
+/* Vibrant Sunset */
+[data-theme="vibrant-sunset"] {
+  --primary: #ff5733;
+  --secondary: #ffc300;
+  --accent: #c70039;
+  --background: #fff5e6;
+  --text-dark: #2c1810;
+  --text-light: #ffffff;
+}
+
+/* Retro Digital */
+[data-theme="retro-digital"] {
+  --primary: #ff00ff;
+  --secondary: #00ffff;
+  --accent: #ffff00;
+  --background: #1a1a2e;
+  --text-dark: #00ffff;
+  --text-light: #ffffff;
+}
+
+/* Bubblegum Dream */
+[data-theme="bubblegum-dream"] {
+  --primary: #ff1493;
+  --secondary: #ff69b4;
+  --accent: #ba55d3;
+  --background: #fff0f5;
+  --text-dark: #6b1b47;
+  --text-light: #ffffff;
+}
+
+/* Forest Mystique */
+[data-theme="forest-mystique"] {
+  --primary: #2d6a4f;
+  --secondary: #a8dadc;
+  --accent: #f1faee;
+  --background: #1b3a2e;
+  --text-dark: #a8dadc;
+  --text-light: #ffffff;
+}
+
+/* ===== GLOBAL STYLES ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--text-dark);
+  line-height: 1.6;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Grungy texture overlay background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px, 100px 100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content sits above texture */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-lg);
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-md);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+/* ===== STICKER COMPONENTS ===== */
+
+/* Base sticker styling */
+.sticker {
+  position: relative;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  will-change: transform;
+}
+
+/* Tilted sticker effect */
+.sticker--tilt-1 {
+  transform: rotate(-2deg);
+}
+
+.sticker--tilt-2 {
+  transform: rotate(2deg);
+}
+
+.sticker--tilt-3 {
+  transform: rotate(-1.5deg);
+}
+
+.sticker--tilt-4 {
+  transform: rotate(1.5deg);
+}
+
+/* Sticker with rough border */
+.sticker--rough {
+  border: 3px solid var(--primary);
+  border-radius: 0 0 0 0;
+  box-shadow: var(--shadow-grungy), 0 0 0 2px rgba(0, 0, 0, 0.1);
+  padding: var(--space-md);
+  background-color: var(--background);
+}
+
+/* Bold sticker with offset shadow */
+.sticker--bold {
+  border: 4px solid var(--primary);
+  box-shadow: 3px 3px 0px var(--secondary), 6px 6px 0px rgba(0, 0, 0, 0.15);
+  background-color: var(--secondary);
+  padding: var(--space-md);
+  color: var(--text-dark);
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sticker--bold:hover {
+  transform: translateX(-2px) translateY(-2px);
+  box-shadow: 5px 5px 0px var(--secondary), 8px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Large sticker variation */
+.sticker--large {
+  border: 5px solid var(--primary);
+  box-shadow: 4px 4px 0px var(--accent), 8px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Peeling effect */
+.sticker--peel::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.8;
+}
+
+/* Wobble animation */
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+  25% {
+    transform: rotate(1deg) translateX(1px);
+  }
+  50% {
+    transform: rotate(-1deg) translateX(-1px);
+  }
+  75% {
+    transform: rotate(0.5deg) translateX(0.5px);
+  }
+}
+
+.sticker--wobble {
+  animation: wobble 0.5s ease-in-out infinite;
+}
+
+/* Sticker hover wobble */
+.sticker--hover-wobble:hover {
+  animation: wobble 0.5s ease-in-out infinite;
+}
+
+/* ===== HEART STICKER STYLES ===== */
+
+.heart-sticker {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+}
+
+.heart-sticker::before {
+  content: '❤️';
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+/* Heart pulse effect */
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.heart-sticker--pulse::before {
+  animation: heartbeat 0.6s ease-in-out infinite;
+}
+
+/* Floating hearts */
+.heart-sticker--floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Multiple heart sizes */
+.heart-sticker--sm::before {
+  font-size: 1.25rem;
+}
+
+.heart-sticker--lg::before {
+  font-size: 2.5rem;
+}
+
+.heart-sticker--xl::before {
+  font-size: 3rem;
+}
+
+/* Glowing heart effect */
+.heart-sticker--glow::before {
+  filter: drop-shadow(0 0 8px var(--primary));
+  animation: float 3s ease-in-out infinite, heartbeat 0.8s ease-in-out infinite;
+}
+
+/* ===== BUTTON STYLES ===== */
+
+.btn {
+  display: inline-block;
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-decoration: none;
+  border: 3px solid var(--primary);
+  border-radius: var(--radius-md);
+  background-color: var(--secondary);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-grungy);
+  text-align: center;
+  user-select: none;
+}
+
+.btn:hover {
+  transform: translateX(-2px) translateY(-2px);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: var(--accent);
+  color: var(--text-light);
+}
+
+.btn:active {
+  transform: translateX(0) translateY(0);
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn--large {
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: 1.5rem;
+  border-width: 4px;
+}
+
+.btn--primary {
+  background-color: var(--primary);
+  color: var(--text-light);
+  border-color: var(--accent);
+}
+
+.btn--primary:hover {
+  background-color: var(--accent);
+}
+
+/* ===== CONTAINER & LAYOUT ===== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid--2col {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid--3col {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ===== NAVIGATION STYLES ===== */
+
+.nav-header {
+  background-color: var(--secondary);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 4px solid var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-grungy);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--primary);
+  letter-spacing: -1px;
+  text-transform: lowercase;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--background);
+  color: var(--text-dark);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: bold;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  transform: rotate(2deg) scale(1.05);
+  background-color: var(--primary);
+  color: var(--text-light);
+  box-shadow: var(--shadow-grungy);
+  animation: wobble 0.5s ease-in-out;
+}
+
+/* ===== FOOTER STYLES ===== */
+
+.footer {
+  background-color: var(--secondary);
+  padding: var(--space-2xl) var(--space-lg);
+  border-top: 4px solid var(--primary);
+  text-align: center;
+  margin-top: var(--space-3xl);
+  font-family: var(--font-accent);
+  color: var(--text-dark);
+  font-size: 1.25rem;
+}
+
+/* ===== SECTION STYLES ===== */
+
+section {
+  padding: var(--space-3xl) var(--space-lg);
+  margin: var(--space-2xl) 0;
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+.text--bold {
+  font-weight: bold;
+}
+
+.text--italic {
+  font-style: italic;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--accent {
+  color: var(--accent);
+}
+
+.text--secondary {
+  color: var(--secondary);
+}
+
+.glow {
+  filter: drop-shadow(0 0 8px var(--primary));
+}
+
+.transform-3d {
+  perspective: 1000px;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Spin animation for fun elements */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Tilt left-right */
+@keyframes tilt-lr {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Entry animations */
+.animate-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-in-down {
+  animation: slideInDown 0.6s ease-out;
+}
+
+.animate-in-fade {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce 0.6s ease-in-out;
+}
+
+/* Sticker bounce on hover */
+.sticker--hover-bounce:hover {
+  animation: bounce 0.5s ease-in-out;
+}
+
+.sticker--hover-tilt:hover {
+  animation: tilt-lr 0.4s ease-in-out;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .btn--large {
+    padding: var(--space-md) var(--space-lg);
+    font-size: 1.125rem;
+  }
+
+  section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .grid--3col {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  section {
+    padding: var(--space-xl) var(--space-md);
+  }
+}

@@ -1,0 +1,30 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Brown Sugar Cinnamon Pop Tart SVG -->
+  <defs>
+    <pattern id="brown-frosting" patternUnits="userSpaceOnUse" width="4" height="4">
+      <circle cx="2" cy="2" r="1" fill="rgba(255, 255, 255, 0.6)"/>
+    </pattern>
+  </defs>
+  
+  <rect width="400" height="400" fill="#fbf5e9"/>
+  <rect x="75" y="100" width="250" height="200" fill="#c9975f" stroke="#8b4513" stroke-width="3" rx="8"/>
+  
+  <circle cx="85" cy="110" r="6" fill="#b8855f"/>
+  <circle cx="315" cy="110" r="6" fill="#b8855f"/>
+  <circle cx="85" cy="290" r="6" fill="#b8855f"/>
+  <circle cx="315" cy="290" r="6" fill="#b8855f"/>
+  
+  <!-- Brown sugar and cinnamon filling -->
+  <rect x="85" y="120" width="230" height="160" fill="#8b6f47" stroke="none"/>
+  
+  <!-- Brown frosting -->
+  <rect x="75" y="100" width="250" height="30" fill="#d4a574" stroke="none" rx="4"/>
+  <rect x="75" y="100" width="250" height="30" fill="url(#brown-frosting)" stroke="none" rx="4"/>
+  
+  <!-- Cinnamon swirl details -->
+  <path d="M 120 130 Q 150 135 180 130" stroke="#a0522d" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M 220 150 Q 250 155 280 150" stroke="#a0522d" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M 100 170 Q 140 175 180 170" stroke="#a0522d" stroke-width="2" fill="none" opacity="0.6"/>
+  
+  <rect x="75" y="100" width="250" height="200" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="1" rx="8"/>
+</svg>

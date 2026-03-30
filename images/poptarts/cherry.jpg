@@ -1,0 +1,32 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cherry Pop Tart SVG -->
+  <defs>
+    <pattern id="cherry-frosting" patternUnits="userSpaceOnUse" width="4" height="4">
+      <circle cx="2" cy="2" r="1" fill="rgba(255, 255, 255, 0.6)"/>
+    </pattern>
+  </defs>
+  
+  <rect width="400" height="400" fill="#fbf5e9"/>
+  <rect x="75" y="100" width="250" height="200" fill="#d4a574" stroke="#8b4513" stroke-width="3" rx="8"/>
+  
+  <circle cx="85" cy="110" r="6" fill="#c9975f"/>
+  <circle cx="315" cy="110" r="6" fill="#c9975f"/>
+  <circle cx="85" cy="290" r="6" fill="#c9975f"/>
+  <circle cx="315" cy="290" r="6" fill="#c9975f"/>
+  
+  <!-- Cherry filling -->
+  <rect x="85" y="120" width="230" height="160" fill="#c41e3a" stroke="none"/>
+  
+  <!-- Red frosting -->
+  <rect x="75" y="100" width="250" height="30" fill="#e85d75" stroke="none" rx="4"/>
+  <rect x="75" y="100" width="250" height="30" fill="url(#cherry-frosting)" stroke="none" rx="4"/>
+  
+  <!-- Cherry details -->
+  <circle cx="130" cy="160" r="5" fill="#8b1a2e" opacity="0.7"/>
+  <circle cx="200" cy="145" r="4" fill="#8b1a2e" opacity="0.7"/>
+  <circle cx="270" cy="170" r="5" fill="#8b1a2e" opacity="0.7"/>
+  <circle cx="150" cy="220" r="4" fill="#8b1a2e" opacity="0.6"/>
+  <circle cx="250" cy="210" r="4.5" fill="#8b1a2e" opacity="0.6"/>
+  
+  <rect x="75" y="100" width="250" height="200" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="1" rx="8"/>
+</svg>

@@ -1,0 +1,186 @@
+/* ===== RANDOM PAGE STYLES ===== */
+
+.random-section {
+  padding: var(--space-3xl) var(--space-lg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.random-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.random-section h1 {
+  margin-bottom: var(--space-lg);
+  animation: slideInDown 0.6s ease-out;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-2xl);
+  animation: slideInUp 0.6s ease-out 0.1s backwards;
+}
+
+/* ===== IMAGE SHOWCASE ===== */
+
+.image-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin: var(--space-3xl) auto;
+  animation: slideInUp 0.8s ease-out 0.2s backwards;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 8px solid #ffffff;
+  border-radius: 2px;
+  box-shadow: -4px 4px 0px rgba(0, 0, 0, 0.2),
+    -8px 8px 0px rgba(0, 0, 0, 0.1);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+  transform: rotate(1deg);
+  box-shadow: -2px 2px 0px rgba(0, 0, 0, 0.2),
+    -6px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+.pop-tart-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* Polaroid tape effect */
+.polaroid-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 12px;
+  background-color: #f5f5dc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.polaroid-tape::before,
+.polaroid-tape::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.polaroid-tape::before {
+  left: 10%;
+  border-radius: 50%;
+}
+
+.polaroid-tape::after {
+  right: 10%;
+  border-radius: 50%;
+}
+
+.flavor-caption {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--primary);
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: var(--space-xl);
+  min-height: 50px;
+  animation: slideInUp 0.6s ease-out 0.3s backwards;
+}
+
+/* ===== BUTTON CONTAINER ===== */
+
+.button-container {
+  margin: var(--space-2xl) 0;
+  animation: slideInUp 0.8s ease-out 0.4s backwards;
+}
+
+/* ===== HEART SCATTER ===== */
+
+.heart-scatter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart-scatter .heart-sticker {
+  position: absolute;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
+}
+
+/* ===== LOADING STATE ===== */
+
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loading .image-container {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .image-container {
+    max-width: 300px;
+  }
+
+  .flavor-caption {
+    font-size: 1.5rem;
+  }
+
+  .button-container {
+    margin: var(--space-xl) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .random-section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .image-container {
+    max-width: 250px;
+    border-width: 6px;
+  }
+
+  .flavor-caption {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: var(--space-md);
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover random Pop Tart flavors - experience the ultimate variety"
+    />
+    <title>Random Pop Tart | Pop Rocks</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/random.css" />
+  </head>
+  <body>
+    <header class="nav-header">
+      <nav class="nav-container">
+        <div class="nav-logo">
+          <span class="logo-text">poprock$</span>
+          <span class="heart-sticker heart-sticker--sm heart-sticker--pulse" style="display: inline-block; margin-left: 0.5rem;"></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link sticker sticker--bold">Home</a></li>
+          <li><a href="random.html" class="nav-link sticker sticker--bold">Random</a></li>
+          <li><a href="reviews.html" class="nav-link sticker sticker--bold">Reviews</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="random-section">
+        <div class="container">
+          <h1 class="text--center">Random Pop Tart</h1>
+          <p class="subtitle text--center">
+            Can't decide? Let fate choose for you. And even if you don't like the result,
+            <span class="text--accent">Pop Tarts still win.</span>
+          </p>
+
+          <div class="image-showcase">
+            <div class="image-container sticker sticker--peel">
+              <img id="pop-tart-image" src="" alt="Pop Tart" class="pop-tart-img" />
+              <div class="polaroid-tape"></div>
+            </div>
+            <p id="flavor-caption" class="flavor-caption"></p>
+          </div>
+
+          <div class="button-container text--center">
+            <button id="next-button" class="btn btn--large btn--primary">
+              Show Me Another
+              <span class="heart-sticker heart-sticker--sm" style="display: inline-block; margin-left: 0.5rem;"></span>
+            </button>
+          </div>
+
+          <!-- Decorative hearts -->
+          <div class="heart-scatter">
+            <span class="heart-sticker heart-sticker--lg heart-sticker--floating" style="position: absolute; top: 100px; left: 5%;"></span>
+            <span class="heart-sticker heart-sticker--xl heart-sticker--floating" style="position: absolute; top: 200px; right: 8%; animation-delay: 0.5s;"></span>
+            <span class="heart-sticker heart-sticker--lg heart-sticker--floating" style="position: absolute; bottom: 100px; right: 5%; animation-delay: 1s;"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="text--center">
+        made with
+        <span class="heart-sticker heart-sticker--sm heart-sticker--pulse" style="display: inline-block; margin: 0 0.25rem;"></span>
+        and chaos
+      </p>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/random-image.js"></script>
+    <script src="js/utils.js"></script>
+  </body>
+</html>

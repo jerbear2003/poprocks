@@ -1,0 +1,32 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blueberry Pop Tart SVG -->
+  <defs>
+    <pattern id="blue-frosting" patternUnits="userSpaceOnUse" width="4" height="4">
+      <circle cx="2" cy="2" r="1" fill="rgba(255, 255, 255, 0.6)"/>
+    </pattern>
+  </defs>
+  
+  <rect width="400" height="400" fill="#fbf5e9"/>
+  <rect x="75" y="100" width="250" height="200" fill="#d4a574" stroke="#8b4513" stroke-width="3" rx="8"/>
+  
+  <circle cx="85" cy="110" r="6" fill="#c9975f"/>
+  <circle cx="315" cy="110" r="6" fill="#c9975f"/>
+  <circle cx="85" cy="290" r="6" fill="#c9975f"/>
+  <circle cx="315" cy="290" r="6" fill="#c9975f"/>
+  
+  <!-- Blueberry filling -->
+  <rect x="85" y="120" width="230" height="160" fill="#4a5899" stroke="none"/>
+  
+  <!-- Blue frosting -->
+  <rect x="75" y="100" width="250" height="30" fill="#7cb3d4" stroke="none" rx="4"/>
+  <rect x="75" y="100" width="250" height="30" fill="url(#blue-frosting)" stroke="none" rx="4"/>
+  
+  <!-- Blueberry details -->
+  <circle cx="130" cy="150" r="6" fill="#2d3c5c" opacity="0.7"/>
+  <circle cx="200" cy="160" r="5" fill="#2d3c5c" opacity="0.7"/>
+  <circle cx="270" cy="140" r="6" fill="#2d3c5c" opacity="0.7"/>
+  <circle cx="150" cy="230" r="5" fill="#2d3c5c" opacity="0.6"/>
+  <circle cx="250" cy="240" r="5.5" fill="#2d3c5c" opacity="0.6"/>
+  
+  <rect x="75" y="100" width="250" height="200" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="1" rx="8"/>
+</svg>
