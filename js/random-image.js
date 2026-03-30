@@ -5,18 +5,18 @@
 
 // Array of Pop Tart images and flavors
 const popTarts = [
-  { flavor: 'Strawberry', image: 'images/poptarts/strawberry.jpg' },
-  { flavor: 'Brown Sugar Cinnamon', image: 'images/poptarts/brown-sugar-cinnamon.jpg' },
-  { flavor: 'Blueberry', image: 'images/poptarts/blueberry.jpg' },
-  { flavor: 'Frosted Chocolate', image: 'images/poptarts/frosted-chocolate.jpg' },
-  { flavor: 'Cherry', image: 'images/poptarts/cherry.jpg' },
-  { flavor: 'Raspberry', image: 'images/poptarts/raspberry.jpg' },
-  { flavor: 'Unfrosted Strawberry', image: 'images/poptarts/unfrosted-strawberry.jpg' },
-  { flavor: 'S\'mores', image: 'images/poptarts/smores.jpg' },
-  { flavor: 'Wildlberry', image: 'images/poptarts/wildberry.jpg' },
-  { flavor: 'French Toast', image: 'images/poptarts/french-toast.jpg' },
-  { flavor: 'Brown Sugar', image: 'images/poptarts/brown-sugar.jpg' },
-  { flavor: 'Cookies and Cream', image: 'images/poptarts/cookies-cream.jpg' },
+  { flavor: 'Strawberry', image: 'images/poptarts/strawberry.svg' },
+  { flavor: 'Brown Sugar Cinnamon', image: 'images/poptarts/brown-sugar-cinnamon.svg' },
+  { flavor: 'Blueberry', image: 'images/poptarts/blueberry.svg' },
+  { flavor: 'Frosted Chocolate', image: 'images/poptarts/frosted-chocolate.svg' },
+  { flavor: 'Cherry', image: 'images/poptarts/cherry.svg' },
+  { flavor: 'Raspberry', image: 'images/poptarts/raspberry.svg' },
+  { flavor: 'Unfrosted Strawberry', image: 'images/poptarts/unfrosted-strawberry.svg' },
+  { flavor: 'S\'mores', image: 'images/poptarts/smores.svg' },
+  { flavor: 'Wildberry', image: 'images/poptarts/wildberry.svg' },
+  { flavor: 'French Toast', image: 'images/poptarts/french-toast.svg' },
+  { flavor: 'Brown Sugar', image: 'images/poptarts/brown-sugar.svg' },
+  { flavor: 'Cookies and Cream', image: 'images/poptarts/cookies-cream.svg' },
 ];
 
 let currentIndex = -1;

@@ -1,0 +1,17 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="uf-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a574;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e74c3c;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="grain" patternUnits="userSpaceOnUse" width="3" height="3">
+      <circle cx="1.5" cy="1.5" r="0.8" fill="rgba(0,0,0,0.06)"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="500" fill="#fbf5e9"/>
+  <rect x="50" y="80" width="300" height="340" fill="url(#uf-gradient)" stroke="#8b4513" stroke-width="3" rx="6"/>
+  <rect x="50" y="80" width="300" height="340" fill="url(#grain)" rx="6"/>
+  <line x1="80" y1="150" x2="320" y2="150" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <line x1="80" y1="210" x2="320" y2="210" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="200" y="455" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Unfrosted Strawberry</text>
+</svg>
