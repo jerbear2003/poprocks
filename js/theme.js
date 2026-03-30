@@ -74,21 +74,11 @@ const themes = [
  * Initialize theme on page load
  */
 function initTheme() {
-  // Get saved theme from localStorage, or randomly select one
-  const savedThemeName = localStorage.getItem('poprocks-theme');
-  let selectedTheme;
-
-  if (savedThemeName && themes.find(t => t.name === savedThemeName)) {
-    selectedTheme = themes.find(t => t.name === savedThemeName);
-  } else {
-    selectedTheme = themes[Math.floor(Math.random() * themes.length)];
-  }
+  // Always select a random theme on page load for variety
+  const selectedTheme = themes[Math.floor(Math.random() * themes.length)];
 
   // Apply the theme
   applyTheme(selectedTheme);
-
-  // Save theme to localStorage
-  localStorage.setItem('poprocks-theme', selectedTheme.name);
 }
 
 /**
@@ -118,7 +108,6 @@ function nextTheme() {
   const nextIndex = (currentIndex + 1) % themes.length;
 
   applyTheme(themes[nextIndex]);
-  localStorage.setItem('poprocks-theme', themes[nextIndex].name);
 }
 
 /**
@@ -131,7 +120,6 @@ function randomizeTheme() {
   if (availableThemes.length > 0) {
     const randomTheme = availableThemes[Math.floor(Math.random() * availableThemes.length)];
     applyTheme(randomTheme);
-    localStorage.setItem('poprocks-theme', randomTheme.name);
   }
 }
 
